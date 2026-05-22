@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil | Sam Logistics</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#f9bc09', accent: '#dda100', dark: '#010101', light: '#faf7f9' } } } }
+  </script>
+</head>
+<body class="bg-[#faf7f9] text-[#010101] font-sans antialiased">
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/sam-logistics-logo.png" alt="Sam Logistics Logo" onerror="this.src='https://via.placeholder.com/150x50?text=Logo'">
+        <div class="nav-logo-text">
+          <span class="brand">Sam Logistics</span>
+          <span class="tagline">Transport & Déménagement</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="a-propos.html" class="nav-link">À propos</a>
+        <a href="fondateur.html" class="nav-link">Fondateur</a>
+        <a href="avis.html" class="nav-link">Avis</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:+33652416133" class="nav-phone">📞 06 52 41 61 33</a>
+        <a href="devis.html" class="btn btn-primary btn-sm">Devis gratuit</a>
+      </div>
+      <button class="burger-btn" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="close-menu" id="close-menu">&times;</button>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="fondateur.html">Fondateur</a>
+    <a href="avis.html">Avis</a>
+    <a href="contact.html">Contact</a>
+    <a href="devis.html" class="btn btn-primary">Devis gratuit</a>
+  </div>
+
+  
+  <section class="hero-dmax">
+    <div class="hero-bg-anim"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content fade-up">
+        <span class="badge">🚀 Devis gratuit en moins d'1h</span>
+        <h1 class="hero-title">Transport et déménagement <br><span class="highlight">simples et rapides</span> <br>en Île-de-France</h1>
+        <p class="hero-subtitle">Sam Logistics accompagne les particuliers et les professionnels. Service sur-mesure, prix justes, relation humaine.</p>
+        <div class="hero-buttons">
+          <a href="devis.html" class="btn btn-primary btn-lg">Demander un devis</a>
+          <a href="tel:+33652416133" class="btn btn-secondary btn-lg">📞 06 52 41 61 33</a>
+        </div>
+      </div>
+      <div class="hero-truck fade-up">
+        <img src="images/accueil.png" alt="Camion Sam Logistics" style="border-radius:20px;">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-container">
+      <div class="text-center mb-12 fade-up">
+        <span class="badge mb-2">Nos Prestations</span>
+        <h2 class="section-title">Découvrez nos <span class="highlight">4 services dédiés</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-icon">📦</div>
+          <h3>Transport Express</h3>
+          <p>Pour les particuliers. Transport de meubles volumineux, électroménager. Rapide et sécurisé.</p>
+          <a href="transport-particuliers.html" class="text-primary font-bold">Découvrir &rarr;</a>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">🤝</div>
+          <h3>Partenariats Pro</h3>
+          <p>Conciergerie, événementiel, magasins. Externalisez vos livraisons B2B en toute confiance.</p>
+          <a href="transport-professionnels.html" class="text-primary font-bold">Découvrir &rarr;</a>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">🏠</div>
+          <h3>Déménagement</h3>
+          <p>Pour les particuliers. Prise en charge complète, manutention, protection et démontage.</p>
+          <a href="demenagement-particuliers.html" class="text-primary font-bold">Découvrir &rarr;</a>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">🏢</div>
+          <h3>Transfert Bureaux</h3>
+          <p>Pour les entreprises. Changement de locaux organisé, fluide, sans impact sur votre activité.</p>
+          <a href="transfert-entreprise.html" class="text-primary font-bold">Découvrir &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="section-container">
+      <div class="founder-section fade-up">
+        <div class="founder-image">
+          <img src="images/sadio.jpeg" alt="Fondateur">
+        </div>
+        <div class="founder-content">
+          <span class="badge mb-2">Le mot du fondateur</span>
+          <h2 class="section-title">La confiance au cœur de <span class="highlight">notre engagement</span></h2>
+          <blockquote>"Sam Logistics est une entreprise fondée avec l’objectif de rendre le transport et le déménagement plus simples, plus accessibles et plus fiables pour les particuliers et les PME."</blockquote>
+          <p>Depuis notre création en 2023, nous mettons un point d'honneur à traiter chaque mission avec le même sérieux qu'une grande entreprise, tout en conservant une proximité humaine et des tarifs justes.</p>
+          <a href="fondateur.html" class="btn btn-secondary mt-4">Lire mon parcours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-container stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+      <div class="stat-item fade-up">
+        <div class="stat-number"><1h</div>
+        <div class="stat-label">Délai de réponse</div>
+      </div>
+      <div class="stat-item fade-up">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Engagements tenus</div>
+      </div>
+      <div class="stat-item fade-up">
+        <div class="stat-number">5★</div>
+        <div class="stat-label">Avis Google</div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="section-container footer-grid">
+      <div>
+        <h3 class="font-bold text-xl mb-2">Sam Logistics</h3>
+        <p class="text-sm text-gray-500">Votre partenaire de confiance pour le transport et le déménagement en Île-de-France.</p>
+      </div>
+      <div>
+        <h4>Nos Services</h4>
+        <ul>
+          <li><a href="transport-particuliers.html">Transport Particuliers</a></li>
+          <li><a href="transport-professionnels.html">Transport B2B</a></li>
+          <li><a href="demenagement-particuliers.html">Déménagement</a></li>
+          <li><a href="transfert-entreprise.html">Transfert Bureaux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="fondateur.html">Le Fondateur</a></li>
+          <li><a href="avis.html">Avis Clients</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33652416133">06 52 41 61 33</a></li>
+          <li><a href="contact.html">Nous écrire</a></li>
+          <li><a href="devis.html">Demander un devis</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-400 mt-8">© 2025 Sam Logistics. Tous droits réservés.</div>
+  </footer>
+
+  <a href="https://wa.me/33652416133" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+    });
+    
+    // Mobile menu
+    const menu = document.getElementById('mobile-menu');
+    document.getElementById('burger-btn').addEventListener('click', () => menu.classList.add('open'));
+    document.getElementById('close-menu').addEventListener('click', () => menu.classList.remove('open'));
+    
+    // Fade Up Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
