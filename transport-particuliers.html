@@ -127,6 +127,38 @@
               <p class="text-xs text-gray-400 mt-1">Formats .jpg, .png acceptés, max 5 Mo.</p>
             </div>
 
+            <div class="grid sm:grid-cols-2 gap-5">
+              <!-- Départ -->
+              <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                <label class="block text-sm font-semibold mb-2 text-primary">Adresse de DÉPART <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="Ex: 10 Rue de Paris, 75001" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
+                
+                <label class="block text-sm font-semibold mb-2">Étage & Accessibilité <span class="text-red-500">*</span></label>
+                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
+                  <option value="" disabled selected>Sélectionnez...</option>
+                  <option>RDC</option>
+                  <option>Étage AVEC Ascenseur</option>
+                  <option>Étage SANS Ascenseur (- de 3 étages)</option>
+                  <option>Étage SANS Ascenseur (3 étages ou +)</option>
+                </select>
+              </div>
+
+              <!-- Arrivée -->
+              <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                <label class="block text-sm font-semibold mb-2 text-primary">Adresse d'ARRIVÉE <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="Ex: 5 Avenue Jean Jaurès, 92100" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
+                
+                <label class="block text-sm font-semibold mb-2">Étage & Accessibilité <span class="text-red-500">*</span></label>
+                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
+                  <option value="" disabled selected>Sélectionnez...</option>
+                  <option>RDC</option>
+                  <option>Étage AVEC Ascenseur</option>
+                  <option>Étage SANS Ascenseur (- de 3 étages)</option>
+                  <option>Étage SANS Ascenseur (3 étages ou +)</option>
+                </select>
+              </div>
+            </div>
+
             <div>
               <label class="block text-sm font-semibold mb-2">Message / Précisions</label>
               <textarea rows="3" placeholder="Étages, ascenseur, contraintes spécifiques..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
@@ -156,27 +188,142 @@
   <section class="py-16 px-6 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-2xl font-bold mb-8 fade-up">Ce que nos clients disent de nous</h2>
-      <div class="flex flex-wrap justify-center gap-6 fade-up">
-        <!-- Faux avis Google -->
-        <div class="bg-gray-50 p-6 rounded-xl text-left max-w-sm border border-gray-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">M</div>
-            <div>
-              <div class="font-bold text-sm">Marie D.</div>
-              <div class="text-yellow-400 text-xs">★★★★★</div>
+      
+      <div class="scrolling-wrapper fade-up">
+        <div class="scrolling-content">
+          <!-- Groupe 1 -->
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">L</div>
+              <div>
+                <div class="font-bold text-sm">Laure Marina M.</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
             </div>
+            <p class="text-sm text-gray-600">"Service impeccable, ponctuel et professionnel."</p>
           </div>
-          <p class="text-sm text-gray-600">"Transport de mon frigo impeccable, ponctuel et très soigneux. Je recommande vivement !"</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-xl text-left max-w-sm border border-gray-100 shadow-sm">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">J</div>
-            <div>
-              <div class="font-bold text-sm">Julien R.</div>
-              <div class="text-yellow-400 text-xs">★★★★★</div>
+          
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">S</div>
+              <div>
+                <div class="font-bold text-sm">Sophie Luzz</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
             </div>
+            <p class="text-sm text-gray-600">"Excellent service!!! Ponctualité, Communication réussie et Travail soigné. L'équipe était super pro."</p>
           </div>
-          <p class="text-sm text-gray-600">"Service rapide ! J'ai demandé un devis à 10h, le canapé était chez moi à 16h."</p>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">O</div>
+              <div>
+                <div class="font-bold text-sm">Océane VAILLANTÉ</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Je recommande cette entreprise à 100 %, j’ai fait mon déménagement avec eux entre deux box... Impeccable."</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center font-bold">V</div>
+              <div>
+                <div class="font-bold text-sm">Victoire Ballot</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Nous avons choisi sam logistique pour déménager d’un 6ème étage sans ascenseur à un 5ème... Au top!"</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">H</div>
+              <div>
+                <div class="font-bold text-sm">Hakim Filali Baba</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Travail très bien réalisé de A à Z, protection des meubles, équipe professionnelle et à l'écoute."</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold">M</div>
+              <div>
+                <div class="font-bold text-sm">Mariam DAOUDA</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Service impeccable, ponctuel et efficace. Tout s’est bien passé. Merci, je recommande."</p>
+          </div>
+
+          <!-- Duplication pour l'effet infini -->
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">L</div>
+              <div>
+                <div class="font-bold text-sm">Laure Marina M.</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Service impeccable, ponctuel et professionnel."</p>
+          </div>
+          
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">S</div>
+              <div>
+                <div class="font-bold text-sm">Sophie Luzz</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Excellent service!!! Ponctualité, Communication réussie et Travail soigné. L'équipe était super pro."</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">O</div>
+              <div>
+                <div class="font-bold text-sm">Océane VAILLANTÉ</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Je recommande cette entreprise à 100 %, j’ai fait mon déménagement avec eux entre deux box... Impeccable."</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center font-bold">V</div>
+              <div>
+                <div class="font-bold text-sm">Victoire Ballot</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Nous avons choisi sam logistique pour déménager d’un 6ème étage sans ascenseur à un 5ème... Au top!"</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">H</div>
+              <div>
+                <div class="font-bold text-sm">Hakim Filali Baba</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Travail très bien réalisé de A à Z, protection des meubles, équipe professionnelle et à l'écoute."</p>
+          </div>
+
+          <div class="review-card bg-gray-50 p-6 rounded-xl text-left border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold">M</div>
+              <div>
+                <div class="font-bold text-sm">Mariam DAOUDA</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">"Service impeccable, ponctuel et efficace. Tout s’est bien passé. Merci, je recommande."</p>
+          </div>
         </div>
       </div>
     </div>
