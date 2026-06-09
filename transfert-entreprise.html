@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W7CXJNH3');</script>
-<!-- End Google Tag Manager -->
-  
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W7CXJNH3');</script>
+  <!-- End Google Tag Manager -->
+
   <title>Transfert Bureaux | Sam Logistics</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,12 +23,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     tailwind.config = { theme: { extend: { colors: { primary: '#f9bc09', accent: '#dda100', dark: '#010101', light: '#faf7f9' } } } }
   </script>
 </head>
+
 <body class="bg-[#faf7f9] text-[#010101] font-sans antialiased">
-  
+
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="images/sam-logistics-logo.png" alt="Sam Logistics Logo" onerror="this.src='https://via.placeholder.com/150x50?text=Logo'">
+        <img src="images/sam-logistics-logo.png" alt="Sam Logistics Logo"
+          onerror="this.src='https://via.placeholder.com/150x50?text=Logo'">
         <div class="nav-logo-text">
           <span class="brand">Sam Logistics</span>
           <span class="tagline">Transport & Déménagement</span>
@@ -59,14 +65,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="devis.html" class="btn btn-primary">Devis gratuit</a>
   </div>
 
-  
+
   <section class="pt-32 pb-20 px-6">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       <div class="fade-up">
         <span class="badge mb-4">Bureaux & Sièges</span>
         <h1 class="text-3xl sm:text-4xl font-bold my-4">Transfert d'Entreprises <br>et de matériel Pro</h1>
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Nous organisons le changement de locaux de vos équipes de manière fluide et sécurisée. Mobilier, parcs informatiques ou stocks, nous planifions tout pour minimiser l'impact.
+          Nous organisons le changement de locaux de vos équipes de manière fluide et sécurisée. Mobilier, parcs
+          informatiques ou stocks, nous planifions tout pour minimiser l'impact.
         </p>
         <div class="border-l-4 border-primary pl-4 text-sm text-gray-500 italic mb-8">
           Interventions possibles de nuit et le week-end pour garantir la continuité totale de votre activité.
@@ -75,7 +82,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div class="fade-up">
         <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white p-2">
-          <img src="images/transfert-entreprise.jpeg" alt="Transfert de bureaux" class="rounded-xl w-full h-[350px] object-cover">
+          <img src="images/transfert-entreprise.jpeg" alt="Transfert de bureaux"
+            class="rounded-xl w-full h-[350px] object-cover">
         </div>
       </div>
     </div>
@@ -89,79 +97,157 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h2 class="text-3xl font-bold">Planifions le transfert de vos locaux</h2>
       </div>
       <div class="grid lg:grid-cols-3 gap-8">
-        
+
         <!-- Colonne Formulaire (70%) -->
         <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 fade-up">
-          <form class="space-y-6" onsubmit="event.preventDefault();">
-            
+          <form id="transfert-form" class="space-y-6">
+
             <div class="grid md:grid-cols-2 gap-5">
               <div>
-                <label class="block text-sm font-semibold mb-2">Nom de l'entreprise <span class="text-red-500">*</span></label>
-                <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <label class="block text-sm font-semibold mb-2">Nom de l'entreprise <span
+                    class="text-red-500">*</span></label>
+                <input type="text" id="ent_nom" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
-                <label class="block text-sm font-semibold mb-2">Nom du contact principal <span class="text-red-500">*</span></label>
-                <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <label class="block text-sm font-semibold mb-2">Nom du contact principal <span
+                    class="text-red-500">*</span></label>
+                <input type="text" id="ent_contact" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
-                <label class="block text-sm font-semibold mb-2">Téléphone direct <span class="text-red-500">*</span></label>
-                <input type="tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <label class="block text-sm font-semibold mb-2">Téléphone direct <span
+                    class="text-red-500">*</span></label>
+                <input type="tel" id="ent_tel" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
-                <label class="block text-sm font-semibold mb-2">E-mail professionnel <span class="text-red-500">*</span></label>
-                <input type="email" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <label class="block text-sm font-semibold mb-2">E-mail professionnel <span
+                    class="text-red-500">*</span></label>
+                <input type="email" id="ent_email" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-5">
               <div>
-                <label class="block text-sm font-semibold mb-2">Nombre de postes <span class="text-red-500">*</span></label>
-                <input type="number" min="1" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none" placeholder="Ex: 15">
+                <label class="block text-sm font-semibold mb-2">Nombre de postes <span
+                    class="text-red-500">*</span></label>
+                <input type="number" id="ent_postes" min="1" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"
+                  placeholder="Ex: 15">
               </div>
               <div>
-                <label class="block text-sm font-semibold mb-2">Date souhaitée <span class="text-red-500">*</span></label>
-                <input type="date" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <label class="block text-sm font-semibold mb-2">Date souhaitée <span
+                    class="text-red-500">*</span></label>
+                <input type="date" id="ent_date" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
-                <label class="block text-sm font-semibold mb-2">Horaire de rappel <span class="text-red-500">*</span></label>
-                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <label class="block text-sm font-semibold mb-2">Horaire de rappel <span
+                    class="text-red-500">*</span></label>
+                <select id="ent_rappel" required
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
                   <option value="" disabled selected>Sélectionner...</option>
-                  <option>Matin (9h - 12h)</option>
-                  <option>Après-midi (14h - 18h)</option>
-                  <option>Urgent</option>
+                  <option value="Matin (9h - 12h)">Matin (9h - 12h)</option>
+                  <option value="Après-midi (14h - 18h)">Après-midi (14h - 18h)</option>
+                  <option value="Urgent">Urgent</option>
                 </select>
               </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
               <div>
-                <label class="block text-sm font-semibold mb-2 text-primary border-b pb-1">Adresse de DÉPART complète <span class="text-red-500">*</span></label>
-                <input type="text" required placeholder="Rue, Code Postal, Ville" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none mt-2">
+                <label class="block text-sm font-semibold mb-2 text-primary border-b pb-1">Adresse de DÉPART complète
+                  <span class="text-red-500">*</span></label>
+                <input type="text" id="ent_dep" required placeholder="Rue, Code Postal, Ville"
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none mt-2">
               </div>
               <div>
-                <label class="block text-sm font-semibold mb-2 text-primary border-b pb-1">Adresse d'ARRIVÉE complète <span class="text-red-500">*</span></label>
-                <input type="text" required placeholder="Rue, Code Postal, Ville" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none mt-2">
+                <label class="block text-sm font-semibold mb-2 text-primary border-b pb-1">Adresse d'ARRIVÉE complète
+                  <span class="text-red-500">*</span></label>
+                <input type="text" id="ent_arr" required placeholder="Rue, Code Postal, Ville"
+                  class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none mt-2">
               </div>
             </div>
 
             <div>
-              <label class="block text-sm font-semibold mb-2">Message / Contraintes (Baie informatique, archives...)</label>
-              <textarea rows="3" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
+              <label class="block text-sm font-semibold mb-2">Message / Contraintes (Baie informatique,
+                archives...)</label>
+              <textarea id="ent_msg" rows="3"
+                class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary w-full justify-center text-lg mt-2">Demander une étude technique gratuite</button>
+            <button type="submit" class="btn btn-primary w-full justify-center text-lg mt-2">Demander une étude
+              technique gratuite</button>
           </form>
+
+          <script>
+            document.getElementById('transfert-form').addEventListener('submit', function (e) {
+              e.preventDefault(); // Empêche le rechargement de la page
+
+              // Récupération des valeurs
+              const nom = document.getElementById('ent_nom').value;
+              const contact = document.getElementById('ent_contact').value;
+              const tel = document.getElementById('ent_tel').value;
+              const email = document.getElementById('ent_email').value;
+              const postes = document.getElementById('ent_postes').value;
+              const date = document.getElementById('ent_date').value;
+              const rappel = document.getElementById('ent_rappel').value;
+              const depart = document.getElementById('ent_dep').value;
+              const arrivee = document.getElementById('ent_arr').value;
+              const msg = document.getElementById('ent_msg').value;
+
+              // Formatage du message (Version Pro / Corporate)
+              let text = `*NOUVELLE DEMANDE : TRANSFERT DE BUREAUX*\n`;
+              text += `======================================\n\n`;
+
+              text += `*[ INFORMATIONS CLIENT ]*\n`;
+              text += `- Entreprise : ${nom}\n`;
+              text += `- Contact : ${contact}\n`;
+              text += `- Tél : ${tel}\n`;
+              text += `- Email : ${email}\n\n`;
+
+              text += `*[ DÉTAILS DE LA DEMANDE ]*\n`;
+              text += `- Postes de travail : ${postes}\n`;
+              text += `- Date souhaitée : ${date}\n`;
+              text += `- Rappel souhaité : ${rappel}\n\n`;
+
+              text += `*[ ADRESSES ]*\n`;
+              text += `- DÉPART : ${depart}\n`;
+              text += `- ARRIVÉE : ${arrivee}\n\n`;
+
+              if (msg) {
+                text += `*[ CONTRAINTES & MESSAGE ]*\n`;
+                text += `${msg}\n\n`;
+              }
+
+              text += `======================================\n`;
+              text += `_Via formulaire Pro - Samlogistics.fr_`;
+
+              // Ouvre WhatsApp
+              const whatsappUrl = `https://wa.me/33652416133?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
+            });
+          </script>
         </div>
 
         <!-- Colonne WhatsApp (30%) -->
         <div class="lg:col-span-1 fade-up">
-          <div class="bg-gray-900 text-white rounded-2xl shadow-sm border border-gray-800 p-8 text-center h-full flex flex-col justify-center">
-            <div class="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#25D366]/30">
-              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <div
+            class="bg-gray-900 text-white rounded-2xl shadow-sm border border-gray-800 p-8 text-center h-full flex flex-col justify-center">
+            <div
+              class="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#25D366]/30">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
             </div>
             <h3 class="font-bold text-xl mb-2 text-white">Ligne Directe Pro</h3>
-            <p class="text-sm text-gray-400 mb-6">Échangeons sur vos dates idéales pour un déplacement de bureau transparent.</p>
-            <a href="https://wa.me/33652416133" class="btn w-full justify-center text-white bg-[#25D366] hover:bg-[#20bd5a]">WhatsApp Pro</a>
+            <p class="text-sm text-gray-400 mb-6">Échangeons sur vos dates idéales pour un déplacement de bureau
+              transparent.</p>
+            <a href="https://wa.me/33652416133"
+              class="btn w-full justify-center text-white bg-[#25D366] hover:bg-[#20bd5a]">WhatsApp Pro</a>
           </div>
         </div>
       </div>
@@ -171,7 +257,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Références Partenaires -->
   <section class="py-12 bg-white border-t border-b border-gray-100 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8 fade-up">Ils nous font confiance</h3>
+      <h3 class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8 fade-up">Ils nous font
+        confiance</h3>
       <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale fade-up">
         <div class="font-bold text-lg">Maison Sash</div>
         <div class="font-bold text-lg text-primary">Cent Neuf</div>
@@ -186,7 +273,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="section-container footer-grid">
       <div>
         <h3 class="font-bold text-xl mb-2">Sam Logistics</h3>
-        <p class="text-sm text-gray-500">Votre partenaire de confiance pour le transport et le déménagement en Île-de-France.</p>
+        <p class="text-sm text-gray-500">Votre partenaire de confiance pour le transport et le déménagement en
+          Île-de-France.</p>
       </div>
       <div>
         <h4>Nos Services</h4>
@@ -218,7 +306,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </footer>
 
   <a href="https://wa.me/33652416133" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
   </a>
 
   <script>
@@ -226,12 +317,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
     });
-    
+
     // Mobile menu
     const menu = document.getElementById('mobile-menu');
     document.getElementById('burger-btn').addEventListener('click', () => menu.classList.add('open'));
     document.getElementById('close-menu').addEventListener('click', () => menu.classList.remove('open'));
-    
+
     // Fade Up Animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -239,4 +330,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>

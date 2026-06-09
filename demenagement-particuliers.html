@@ -97,63 +97,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <!-- Colonne Formulaire (70%) -->
         <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 fade-up">
-          <form class="space-y-6" onsubmit="event.preventDefault();">
+<form id="dem-part-form" class="space-y-6">
             
             <h3 class="font-bold text-lg border-b pb-2">1. Coordonnées & Logement</h3>
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold mb-2">Nom Complet <span class="text-red-500">*</span></label>
-                <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="text" id="dem_nom" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
                 <label class="block text-sm font-semibold mb-2">Téléphone <span class="text-red-500">*</span></label>
-                <input type="tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="tel" id="dem_tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div class="sm:col-span-2">
                 <label class="block text-sm font-semibold mb-2">E-mail (Optionnel)</label>
-                <input type="email" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="email" id="dem_email" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
 
             <div class="mb-4">
               <label class="block text-sm font-semibold mb-2">Type de logement actuel <span class="text-red-500">*</span></label>
               <div class="flex flex-wrap gap-4">
-                <label class="flex items-center gap-2"><input type="radio" name="logement" value="Studio" required class="accent-primary"> Studio</label>
-                <label class="flex items-center gap-2"><input type="radio" name="logement" value="Appartement" class="accent-primary"> Appartement</label>
-                <label class="flex items-center gap-2"><input type="radio" name="logement" value="Maison" class="accent-primary"> Maison</label>
+                <label class="flex items-center gap-2"><input type="radio" name="dem_logement" value="Studio" required class="accent-primary"> Studio</label>
+                <label class="flex items-center gap-2"><input type="radio" name="dem_logement" value="Appartement" class="accent-primary"> Appartement</label>
+                <label class="flex items-center gap-2"><input type="radio" name="dem_logement" value="Maison" class="accent-primary"> Maison</label>
               </div>
             </div>
 
             <h3 class="font-bold text-lg border-b pb-2 pt-2">2. Trajet & Contraintes Logistiques</h3>
             
             <div class="grid md:grid-cols-2 gap-6">
-              <!-- Départ -->
               <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
                 <label class="block text-sm font-semibold mb-2 text-primary">Adresse de DÉPART <span class="text-red-500">*</span></label>
-                <input type="text" required placeholder="Ex: 10 Rue de Paris, 75001" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
+                <input type="text" id="dem_dep" required placeholder="Ex: 10 Rue de Paris, 75001" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
                 
                 <label class="block text-sm font-semibold mb-2">Étage & Accessibilité <span class="text-red-500">*</span></label>
-                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
+                <select id="dem_etage_dep" required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
                   <option value="" disabled selected>Sélectionnez...</option>
-                  <option>RDC</option>
-                  <option>Étage AVEC Ascenseur</option>
-                  <option>Étage SANS Ascenseur (- de 3 étages)</option>
-                  <option>Étage SANS Ascenseur (3 étages ou +)</option>
+                  <option value="RDC">RDC</option>
+                  <option value="Étage AVEC Ascenseur">Étage AVEC Ascenseur</option>
+                  <option value="Étage SANS Ascenseur (- de 3 étages)">Étage SANS Ascenseur (- de 3 étages)</option>
+                  <option value="Étage SANS Ascenseur (3 étages ou +)">Étage SANS Ascenseur (3 étages ou +)</option>
                 </select>
               </div>
 
-              <!-- Arrivée -->
               <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
                 <label class="block text-sm font-semibold mb-2 text-primary">Adresse d'ARRIVÉE <span class="text-red-500">*</span></label>
-                <input type="text" required placeholder="Ex: 5 Avenue Jean Jaurès, 92100" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
+                <input type="text" id="dem_arr" required placeholder="Ex: 5 Avenue Jean Jaurès, 92100" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
                 
                 <label class="block text-sm font-semibold mb-2">Étage & Accessibilité <span class="text-red-500">*</span></label>
-                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
+                <select id="dem_etage_arr" required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
                   <option value="" disabled selected>Sélectionnez...</option>
-                  <option>RDC</option>
-                  <option>Étage AVEC Ascenseur</option>
-                  <option>Étage SANS Ascenseur (- de 3 étages)</option>
-                  <option>Étage SANS Ascenseur (3 étages ou +)</option>
+                  <option value="RDC">RDC</option>
+                  <option value="Étage AVEC Ascenseur">Étage AVEC Ascenseur</option>
+                  <option value="Étage SANS Ascenseur (- de 3 étages)">Étage SANS Ascenseur (- de 3 étages)</option>
+                  <option value="Étage SANS Ascenseur (3 étages ou +)">Étage SANS Ascenseur (3 étages ou +)</option>
                 </select>
               </div>
             </div>
@@ -161,18 +159,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="grid sm:grid-cols-2 gap-5 pt-2">
               <div>
                 <label class="block text-sm font-semibold mb-2">Date souhaitée <span class="text-red-500">*</span></label>
-                <input type="date" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="date" id="dem_date" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2">Précisions (Objets très lourds, piano...)</label>
-              <textarea rows="3" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
+              <textarea id="dem_msg" rows="3" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary w-full justify-center text-lg mt-4">Demander un devis (Gratuit)</button>
           </form>
-        </div>
+
+          <script>
+            document.getElementById('dem-part-form').addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const nom = document.getElementById('dem_nom').value;
+              const tel = document.getElementById('dem_tel').value;
+              const email = document.getElementById('dem_email').value || "Non renseigné";
+              
+              // Récupérer le bouton radio sélectionné
+              const logementRadio = document.querySelector('input[name="dem_logement"]:checked');
+              const logement = logementRadio ? logementRadio.value : "Non précisé";
+              
+              const depart = document.getElementById('dem_dep').value;
+              const etage_dep = document.getElementById('dem_etage_dep').value;
+              const arrivee = document.getElementById('dem_arr').value;
+              const etage_arr = document.getElementById('dem_etage_arr').value;
+              
+              const date = document.getElementById('dem_date').value;
+              const msg = document.getElementById('dem_msg').value;
+
+              // Formatage sans émojis (Corporate)
+              let text = `*NOUVELLE DEMANDE : DÉMÉNAGEMENT PARTICULIER*\n`;
+              text += `======================================\n\n`;
+              
+              text += `*[ INFORMATIONS CLIENT ]*\n`;
+              text += `- Nom : ${nom}\n`;
+              text += `- Tél : ${tel}\n`;
+              text += `- Email : ${email}\n\n`;
+              
+              text += `*[ DÉTAILS DU DÉMÉNAGEMENT ]*\n`;
+              text += `- Logement actuel : ${logement}\n`;
+              text += `- Date souhaitée : ${date}\n\n`;
+              
+              text += `*[ ADRESSE DE DÉPART ]*\n`;
+              text += `- Lieu : ${depart}\n`;
+              text += `- Accès : ${etage_dep}\n\n`;
+              
+              text += `*[ ADRESSE D'ARRIVÉE ]*\n`;
+              text += `- Lieu : ${arrivee}\n`;
+              text += `- Accès : ${etage_arr}\n\n`;
+              
+              if(msg) {
+                  text += `*[ PRÉCISIONS & OBJETS LOURDS ]*\n`;
+                  text += `${msg}\n\n`;
+              }
+              
+              text += `======================================\n`;
+              text += `_Via formulaire Déménagement - Samlogistics.fr_`;
+
+              const whatsappUrl = `https://wa.me/33652416133?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
+            });
+          </script>
+                  </div>
 
         <!-- Colonne WhatsApp (30%) -->
         <div class="lg:col-span-1 fade-up">

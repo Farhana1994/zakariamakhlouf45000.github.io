@@ -102,80 +102,143 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <!-- Colonne Formulaire (70%) -->
         <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 fade-up">
-          <form class="space-y-5" onsubmit="event.preventDefault();">
+<form id="express-form" class="space-y-5">
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold mb-2">Nom Complet <span class="text-red-500">*</span></label>
-                <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="text" id="exp_nom" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
                 <label class="block text-sm font-semibold mb-2">Numéro de téléphone <span class="text-red-500">*</span></label>
-                <input type="tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="tel" id="exp_tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
             
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold mb-2">Adresse E-mail</label>
-                <input type="email" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="email" id="exp_email" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
                 <label class="block text-sm font-semibold mb-2">Date souhaitée <span class="text-red-500">*</span></label>
-                <input type="date" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="date" id="exp_date" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2">Objet à transporter <span class="text-red-500">*</span></label>
-              <input type="text" required placeholder="Ex: Frigo américain, Canapé d'angle..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+              <input type="text" id="exp_objet" required placeholder="Ex: Frigo américain, Canapé d'angle..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2">Photo de l'objet (Optionnel)</label>
-              <input type="file" accept=".jpg,.jpeg,.png" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
+              <input type="file" id="exp_photo" accept=".jpg,.jpeg,.png" class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
               <p class="text-xs text-gray-400 mt-1">Formats .jpg, .png acceptés, max 5 Mo.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 gap-5">
-              <!-- Départ -->
               <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
                 <label class="block text-sm font-semibold mb-2 text-primary">Adresse de DÉPART <span class="text-red-500">*</span></label>
-                <input type="text" required placeholder="Ex: 10 Rue de Paris, 75001" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
+                <input type="text" id="exp_dep" required placeholder="Ex: 10 Rue de Paris, 75001" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
                 
                 <label class="block text-sm font-semibold mb-2">Étage & Accessibilité <span class="text-red-500">*</span></label>
-                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
+                <select id="exp_etage_dep" required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
                   <option value="" disabled selected>Sélectionnez...</option>
-                  <option>RDC</option>
-                  <option>Étage AVEC Ascenseur</option>
-                  <option>Étage SANS Ascenseur (- de 3 étages)</option>
-                  <option>Étage SANS Ascenseur (3 étages ou +)</option>
+                  <option value="RDC">RDC</option>
+                  <option value="Étage AVEC Ascenseur">Étage AVEC Ascenseur</option>
+                  <option value="Étage SANS Ascenseur (- de 3 étages)">Étage SANS Ascenseur (- de 3 étages)</option>
+                  <option value="Étage SANS Ascenseur (3 étages ou +)">Étage SANS Ascenseur (3 étages ou +)</option>
                 </select>
               </div>
 
-              <!-- Arrivée -->
               <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
                 <label class="block text-sm font-semibold mb-2 text-primary">Adresse d'ARRIVÉE <span class="text-red-500">*</span></label>
-                <input type="text" required placeholder="Ex: 5 Avenue Jean Jaurès, 92100" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
+                <input type="text" id="exp_arr" required placeholder="Ex: 5 Avenue Jean Jaurès, 92100" class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none mb-3">
                 
                 <label class="block text-sm font-semibold mb-2">Étage & Accessibilité <span class="text-red-500">*</span></label>
-                <select required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
+                <select id="exp_etage_arr" required class="w-full p-3 rounded-lg border border-gray-200 bg-white focus:border-primary focus:outline-none text-sm">
                   <option value="" disabled selected>Sélectionnez...</option>
-                  <option>RDC</option>
-                  <option>Étage AVEC Ascenseur</option>
-                  <option>Étage SANS Ascenseur (- de 3 étages)</option>
-                  <option>Étage SANS Ascenseur (3 étages ou +)</option>
+                  <option value="RDC">RDC</option>
+                  <option value="Étage AVEC Ascenseur">Étage AVEC Ascenseur</option>
+                  <option value="Étage SANS Ascenseur (- de 3 étages)">Étage SANS Ascenseur (- de 3 étages)</option>
+                  <option value="Étage SANS Ascenseur (3 étages ou +)">Étage SANS Ascenseur (3 étages ou +)</option>
                 </select>
               </div>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2">Message / Précisions</label>
-              <textarea rows="3" placeholder="Étages, ascenseur, contraintes spécifiques..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
+              <textarea id="exp_msg" rows="3" placeholder="Étages, ascenseur, contraintes spécifiques..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary w-full justify-center">Demander mon devis</button>
           </form>
+
+          <script>
+            document.getElementById('express-form').addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const nom = document.getElementById('exp_nom').value;
+              const tel = document.getElementById('exp_tel').value;
+              const email = document.getElementById('exp_email').value || "Non renseigné";
+              const date = document.getElementById('exp_date').value;
+              const objet = document.getElementById('exp_objet').value;
+              const photo = document.getElementById('exp_photo').value ? "Oui (à envoyer dans le chat)" : "Non";
+              
+              const depart = document.getElementById('exp_dep').value;
+              const etage_dep = document.getElementById('exp_etage_dep').value;
+              const arrivee = document.getElementById('exp_arr').value;
+              const etage_arr = document.getElementById('exp_etage_arr').value;
+              
+              const msg = document.getElementById('exp_msg').value;
+
+              // Formatage sans émojis (Corporate)
+              let text = `*NOUVELLE DEMANDE : TRANSPORT EXPRESS*\n`;
+              text += `======================================\n\n`;
+              
+              text += `*[ INFORMATIONS CLIENT ]*\n`;
+              text += `- Nom : ${nom}\n`;
+              text += `- Tél : ${tel}\n`;
+              text += `- Email : ${email}\n\n`;
+              
+              text += `*[ DÉTAILS DU TRANSPORT ]*\n`;
+              text += `- Date souhaitée : ${date}\n`;
+              text += `- Objet à transporter : ${objet}\n`;
+              text += `- Photo jointe ? : ${photo}\n\n`;
+              
+              text += `*[ ADRESSE DE DÉPART ]*\n`;
+              text += `- Lieu : ${depart}\n`;
+              text += `- Accès : ${etage_dep}\n\n`;
+              
+              text += `*[ ADRESSE D'ARRIVÉE ]*\n`;
+              text += `- Lieu : ${arrivee}\n`;
+              text += `- Accès : ${etage_arr}\n\n`;
+              
+              if(msg) {
+                  text += `*[ PRÉCISIONS & MESSAGE ]*\n`;
+                  text += `${msg}\n\n`;
+              }
+              
+              text += `======================================\n`;
+              text += `_Via formulaire Express - Samlogistics.fr_`;
+
+              const whatsappUrl = `https://wa.me/33652416133?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
+            });
+          </script>
         </div>
+
+        <div class="lg:col-span-1 fade-up">
+          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center h-full flex flex-col justify-center">
+            <div class="w-16 h-16 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <h3 class="font-bold text-xl mb-2">Besoin d'une réponse immédiate ?</h3>
+            <p class="text-sm text-gray-500 mb-6">Envoyez-nous un message ou une photo de votre objet directement sur WhatsApp.</p>
+            <a href="https://wa.me/33652416133" class="btn w-full justify-center text-white bg-[#25D366] hover:bg-[#20bd5a] shadow-lg shadow-[#25D366]/30">Discuter sur WhatsApp</a>
+          </div>
+        </div>     
+         </div>
 
         <!-- Colonne WhatsApp (30%) -->
         <div class="lg:col-span-1 fade-up">

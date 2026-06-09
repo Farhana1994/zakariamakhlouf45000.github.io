@@ -98,48 +98,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <!-- Colonne Formulaire (70%) -->
         <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 fade-up">
-          <form class="space-y-5" onsubmit="event.preventDefault();">
+<form id="pro-form" class="space-y-5">
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold mb-2">Raison sociale / Entreprise <span class="text-red-500">*</span></label>
-                <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="text" id="pro_entreprise" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
                 <label class="block text-sm font-semibold mb-2">Nom du contact <span class="text-red-500">*</span></label>
-                <input type="text" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="text" id="pro_contact" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
             
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold mb-2">Numéro de téléphone direct <span class="text-red-500">*</span></label>
-                <input type="tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="tel" id="pro_tel" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
               <div>
                 <label class="block text-sm font-semibold mb-2">E-mail pro <span class="text-red-500">*</span></label>
-                <input type="email" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
+                <input type="email" id="pro_email" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none">
               </div>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2">Type de besoin <span class="text-red-500">*</span></label>
-              <select required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none text-gray-700">
+              <select id="pro_besoin" required class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none text-gray-700">
                 <option value="" disabled selected>Sélectionnez une option</option>
-                <option>Récurrent</option>
-                <option>Urgent</option>
-                <option>Événementiel</option>
-                <option>Autre</option>
+                <option value="Récurrent">Récurrent</option>
+                <option value="Urgent">Urgent</option>
+                <option value="Événementiel">Événementiel</option>
+                <option value="Autre">Autre</option>
               </select>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2">Message / Description de vos flux</label>
-              <textarea rows="3" placeholder="Volume estimé, régularité, type de marchandise..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
+              <textarea id="pro_msg" rows="3" placeholder="Volume estimé, régularité, type de marchandise..." class="w-full p-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:outline-none"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary w-full justify-center">Demander un devis Pro / Partenariat</button>
           </form>
-        </div>
+
+          <script>
+            document.getElementById('pro-form').addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const entreprise = document.getElementById('pro_entreprise').value;
+              const contact = document.getElementById('pro_contact').value;
+              const tel = document.getElementById('pro_tel').value;
+              const email = document.getElementById('pro_email').value;
+              const besoin = document.getElementById('pro_besoin').value;
+              const msg = document.getElementById('pro_msg').value;
+
+              // Formatage sans émojis (Corporate B2B)
+              let text = `*NOUVELLE DEMANDE : PARTENARIAT B2B*\n`;
+              text += `======================================\n\n`;
+              
+              text += `*[ INFORMATIONS ENTREPRISE ]*\n`;
+              text += `- Raison sociale : ${entreprise}\n`;
+              text += `- Contact : ${contact}\n`;
+              text += `- Tél direct : ${tel}\n`;
+              text += `- Email pro : ${email}\n\n`;
+              
+              text += `*[ DÉTAILS DU BESOIN ]*\n`;
+              text += `- Type de demande : ${besoin}\n\n`;
+              
+              if(msg) {
+                  text += `*[ DESCRIPTION DES FLUX & MESSAGE ]*\n`;
+                  text += `${msg}\n\n`;
+              }
+              
+              text += `======================================\n`;
+              text += `_Via formulaire Pro - Samlogistics.fr_`;
+
+              const whatsappUrl = `https://wa.me/33652416133?text=${encodeURIComponent(text)}`;
+              window.open(whatsappUrl, '_blank');
+            });
+          </script>        </div>
 
         <!-- Colonne WhatsApp (30%) -->
         <div class="lg:col-span-1 fade-up">
